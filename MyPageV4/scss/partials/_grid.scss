@@ -1,0 +1,40 @@
+.wrapper { 
+    display: grid;
+    grid-template-columns: repeat($numCols, 1fr); 
+}
+
+@media screen and (max-width: $med-large) { 
+    section,div,span { 
+        border-color: blue; 
+    }
+    .content { 
+        margin: 0; 
+        padding: 0.5rem 0rem;
+    }
+    .wrapper { 
+        grid-template-rows: 10rem auto; 
+    }
+    .info-left { 
+        grid-row: 1; 
+        grid-column: span $numCols; 
+    }
+    .info-right { 
+        grid-row: 2; 
+        grid-column: span $numCols;  
+    }
+}
+@media screen and (min-width: $med-large) { 
+    section,div,span { 
+        border-color: red; 
+    }
+    .info-left { 
+        grid-row: 1; 
+        grid-column-start: 2; 
+        grid-column-end: 6;
+    }
+    .info-right { 
+        grid-row: 1; 
+        grid-column-start: 6;
+        grid-column-end: 12; 
+    }
+}

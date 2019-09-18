@@ -1,0 +1,310 @@
+/* FUNDAMENTALS */
+/* SITE COLORS */
+/* BREAKPOINTS */
+section, div, span {
+  padding: 0.5rem;
+}
+
+body {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.content {
+  z-index: 0;
+  margin: 0 1.5rem 0 1.5rem;
+  min-height: 98vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+p, li {
+  font-family: 'Roboto', sans-serif;
+}
+
+p {
+  font-size: 1rem;
+  letter-spacing: 0.025rem;
+}
+
+i {
+  text-align: center;
+}
+
+/* ICONS 
+    <i class="fas fa-envelope"></i>
+    <i class="fab fa-github"></i>
+    <i class="fab fa-linkedin-in"></i>
+    <i class="fas fa-angle-double-right"></i>
+    <i class="fas fa-angle-down"></i>
+    <i class="fas fa-code"></i>
+    <i class="fas fa-university"></i>
+    <i class="fas fa-film"></i>
+*/
+/* LOAD SCREEN */
+.loader {
+  display: none;
+  z-index: 999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #FFFFFF;
+}
+
+.loader .loading-container {
+  border-color: green;
+  width: 3rem;
+  height: 3rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[12];
+      grid-template-columns: repeat(12, 1fr);
+}
+
+@media screen and (max-width: 992px) {
+  section, div, span {
+    border-color: blue;
+  }
+  .content {
+    margin: 0;
+    padding: 0.5rem 0rem;
+  }
+  .wrapper {
+    -ms-grid-rows: 10rem auto;
+        grid-template-rows: 10rem auto;
+  }
+  .info-left {
+    -ms-grid-row: 1;
+    grid-row: 1;
+    grid-column: span 12;
+  }
+  .info-right {
+    -ms-grid-row: 2;
+    grid-row: 2;
+    grid-column: span 12;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  section, div, span {
+    border-color: red;
+  }
+  .info-left {
+    -ms-grid-row: 1;
+    grid-row: 1;
+    -ms-grid-column: 2;
+        grid-column-start: 2;
+    grid-column-end: 6;
+  }
+  .info-right {
+    -ms-grid-row: 1;
+    grid-row: 1;
+    -ms-grid-column: 6;
+        grid-column-start: 6;
+    grid-column-end: 12;
+  }
+}
+
+/* MODALS */
+.info-left {
+  position: static;
+  -webkit-box-shadow: 4px 1px 7px -2px #E5E5E5;
+          box-shadow: 4px 1px 7px -2px #E5E5E5;
+}
+
+.info-left #headshot img {
+  display: block;
+  margin-right: auto;
+  border-radius: 50%;
+  border: 0.4rem solid #E5E5E5;
+}
+
+.info-left #links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.info-left #links a {
+  padding: 1rem;
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
+}
+
+.info-left #links a i {
+  color: #000000;
+  display: inline;
+  margin-right: 0.5rem;
+}
+
+.info-left ul {
+  list-style-type: none;
+  padding-left: 0.5rem;
+}
+
+.info-left ul li:before {
+  content: '-';
+  margin-right: 0.75rem;
+}
+
+@media screen and (max-width: 992px) {
+  .info-left {
+    -webkit-box-shadow: 4px 4px 7px -2px #E5E5E5;
+            box-shadow: 4px 4px 7px -2px #E5E5E5;
+  }
+  #headshot, #links {
+    max-width: 40%;
+  }
+  #headshot img {
+    max-width: 7rem;
+    margin-left: 0;
+  }
+  #bio {
+    display: none;
+  }
+  #links {
+    position: absolute;
+    right: 2rem;
+    top: 3rem;
+  }
+  #links p {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  #headshot {
+    margin-top: 5rem;
+  }
+  #headshot img {
+    max-width: 15rem;
+    margin-left: auto;
+  }
+  #bio {
+    position: relative;
+    margin: 1rem auto 0rem auto;
+    padding: 1rem 2.5rem;
+    border-top: 0.125rem solid #E5E5E5;
+    max-width: 235px;
+  }
+  #bio > * {
+    margin: 0.5rem;
+  }
+  #bio h4 {
+    margin-top: 0.75rem;
+  }
+  #bio i {
+    position: absolute;
+    right: 4rem;
+    top: 1rem;
+  }
+  #links {
+    padding-top: 0.5rem;
+  }
+}
+
+.info-right {
+  max-height: 90vh;
+  overflow-y: scroll;
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+  padding: 0;
+  margin-top: 2rem;
+}
+
+.info-right .jumbotron, .info-right .resume, .info-right .portfolio, .info-right .about {
+  margin: 2rem 0rem 0rem 2rem;
+}
+
+.info-right::-webkit-scrollbar {
+  width: 0 !important;
+}
+
+.scroller {
+  position: absolute;
+  bottom: 2rem;
+  right: 4.5rem;
+  border: 0.125rem solid green;
+}
+
+@media screen and (max-width: 992px) {
+  .info-right .jumbotron, .info-right .resume, .info-right .portfolio, .info-right .about {
+    margin: 1.5rem 0rem;
+  }
+  .info-right .jumbotron .display {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .scroller {
+    display: none;
+  }
+}
+
+.jumbotron .display {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.jumbotron .display h1 {
+  margin: -0.25rem 0rem 0rem 0rem;
+}
+
+.jumbotron .display i:before {
+  margin: 2rem 1rem 1rem 1rem;
+}
+
+.portfolio .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  justify-items: left;
+}
+
+.portfolio .container .items {
+  margin: 1rem;
+}
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,11 @@
+.portfolio { 
+    .container { 
+        display: flex; 
+        flex-direction: row; 
+        justify-items: left; 
+
+        .items { 
+            margin: 1rem;
+        }
+    }
+}

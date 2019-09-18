@@ -1,0 +1,64 @@
+section,div,span { 
+    //border: 0.125rem solid red; /* DEBUG */
+    padding: 0.5rem; 
+}
+body { 
+    overflow: hidden;
+    margin: 0;
+    padding: 0;      
+}
+.content { 
+    z-index: 0; 
+    margin: 0 1.5rem 0 1.5rem;
+    min-height: 98vh; 
+
+}
+h1,h2,h3,h4,h5,h6 { 
+    font-family: 'Open Sans', sans-serif; 
+}
+h1 { 
+    font-size: 2.5rem;
+}
+p, li { 
+    font-family: 'Roboto', sans-serif; 
+}
+p { 
+    font-size: 1rem; 
+    letter-spacing: 0.025rem;
+}
+i { 
+    text-align: center;
+}
+/* ICONS 
+    <i class="fas fa-envelope"></i>
+    <i class="fab fa-github"></i>
+    <i class="fab fa-linkedin-in"></i>
+    <i class="fas fa-angle-double-right"></i>
+    <i class="fas fa-angle-down"></i>
+    <i class="fas fa-code"></i>
+    <i class="fas fa-university"></i>
+    <i class="fas fa-film"></i>
+*/ 
+
+/* LOAD SCREEN */ 
+.loader {   
+    display: none;
+    z-index: 999;
+    position: absolute;
+    top: 0;
+    left: 0; 
+    bottom: 0; 
+    right: 0; 
+    background-color: $white;
+     
+
+    .loading-container { 
+        border-color: green;
+        width: 3rem;
+        height: 3rem;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
