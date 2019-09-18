@@ -1,0 +1,24 @@
+body, html { 
+    background-color: $white;  
+}
+
+div {
+    //border: 0.125rem solid red; 
+}
+
+h1 { 
+    font-size: 4rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+p {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.content-main {
+    position: absolute; 
+    top: 0;
+    left: 0; 
+    width: 100vw;
+    height: 100vh; 
+}

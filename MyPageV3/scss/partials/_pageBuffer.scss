@@ -1,0 +1,43 @@
+.page-buffer {  
+    position: absolute; 
+    top: 0;
+    left: 0; 
+    z-index: 99999; 
+
+    .anim-up { 
+        background-color: $white; 
+        min-width: 100vw; 
+        height: 70vh;  
+        
+        .loading-icon { 
+            border: 0.125rem solid red; 
+            position: relative;
+            margin: auto;
+            top: 50vh;
+            height: 4.5rem; 
+            width: 4.5rem;
+            transform: rotate(45deg);
+            
+            .anim-load { 
+                border: 0.125rem solid red; 
+                height: 2rem; 
+                width: 2rem; 
+            }
+        }
+        
+        .loading-bar { 
+            background-color: $black;
+            position: relative;
+            top: 59vh; 
+            margin: auto; 
+            height: 0.5rem;
+            width: 100%; 
+        } 
+    }
+    
+    .anim-down { 
+        background-color: $white; 
+        min-width: 100vw; 
+        height: 30vh;
+    }
+}

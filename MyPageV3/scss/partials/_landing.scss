@@ -1,0 +1,32 @@
+.landing { 
+    min-width: 100vw; 
+    min-height: 100vh;
+}
+
+.row { 
+    background-color: $white; 
+    //border-left: 1rem solid $purple-main; 
+    padding: 2rem;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: left; 
+    //transition: background-color 0.4s, color 0.2s; 
+    /*
+    &:hover { 
+        background-color: $purple-lighter;
+        color: $white; 
+    }
+    */
+    h1 { 
+        margin: auto 0 auto 0; 
+    }
+    
+    .plus { 
+        border: 1px solid red; 
+        margin: auto 2rem auto 2rem; 
+         
+        height: 3rem; 
+        width: 3rem; 
+    }
+}
