@@ -1,0 +1,178 @@
+body
+{
+    margin: 0;
+    background-color: black;
+}
+
+#intro
+{
+    min-height: 100%; 
+    background-color: black; 
+     
+    padding: 30px; 
+    
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center;
+}
+
+.greet
+{     
+    font-family: "Roboto Condensed"; 
+    color: white; 
+    
+    /* The code below was taken from an article on the CSS-tricks website - Vol 1
+    called "Scaled Topography" 
+    */
+    font-size: calc(50px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+    line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 300px)/(1600 - 300)));
+    
+    letter-spacing: 2px;
+    text-align: center; 
+    
+    margin-top: 10%; 
+    display: flex; 
+    flex-direction: row; 
+    justify-content: center;
+}
+
+.greet p
+{
+    padding: 10px; 
+}
+
+#face 
+{
+    height: 280px; 
+    
+    background-color: white; 
+    border-bottom: 1px solid black;
+
+    position: relative; 
+    display: flex; 
+    flex-direction: row; 
+}
+
+#me
+{
+    height: auto; 
+    width: 200px; 
+    
+    opacity: 0.0; 
+    border-radius: 50%; 
+    border: solid 1px black; 
+    padding: 5px; 
+    
+    position: relative; 
+    margin-top: 30px; 
+    margin-bottom: 15px; 
+    margin-left: 30px; 
+}
+
+#me:hover
+{
+    border: 3px solid black;
+    padding: 3px;
+}
+
+#bio
+{
+    border-left: solid 1px black;
+    margin-left: 35px; 
+    padding: 20px; 
+}
+
+#bio p1
+{
+    font-family: Roboto Condensed;
+    font-size: 25px; 
+    letter-spacing: 2px; 
+}
+
+#bio p
+{
+    font-family: Roboto; 
+    font-size: 15px; 
+}
+
+.line 
+{
+    border-top: solid 1px black; 
+}
+
+#face .social
+{
+    margin-bottom: 20px;   
+    margin-left: 32px;
+}
+
+#left, #mid_left, #mid_right, #right
+{
+    font-size: 20px; 
+    text-align: center;
+    text-decoration: none;
+    color: black; 
+    background-color: white;
+    
+    max-height: 40px; 
+    width: 40px;  
+    
+    border: 1px solid black; 
+    border-radius: 50%; 
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+    float: left;
+    margin: 5px;  
+}
+
+#left:hover, #mid_left:hover, #mid_right:hover, #right:hover
+{
+    color: white; 
+    background-color: black; 
+}
+
+#info
+{ 
+    opacity: 0.0; 
+    
+    height: 140px; 
+    padding: 15px; 
+    position: relative; 
+    
+    display: flex; 
+    flex-direction: row; 
+    justify-content: center; 
+}
+
+#info p
+{
+    font-family: Roboto; 
+    font-size: 30px; 
+    text-align: center; 
+}
+
+#col_1, #col_2, #col_3
+{
+    height: 100px; 
+    width: 200px; 
+    
+    border: 1px solid black; 
+    padding-top: 10px; 
+    margin: 15px; 
+}
+
+#col_1:hover, #col_2:hover, #col_3:hover 
+{
+    border: solid 3px black; 
+    padding-top: 8px; 
+    margin-right: 13px;
+    margin-left: 13px; 
+}
+
+#pitch
+{
+    height: 100px;
+    border-top: solid 1px black; 
+    border-bottom: solid 1px black; 
+}

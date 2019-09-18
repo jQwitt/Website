@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang='en-US'>
+    <!--
+        This webpage is project for me to learn new
+        HTML / CSS / Javascipt skills as well as 
+        provide a sample of my work. 
+        
+        Date Started: 10/19/18 5:37:02 PM
+        Date Finished: - 
+    
+        Jack Witt 
+    --> 
+    <head>
+        <title>Jack Witt</title>
+        <meta charset="utf-8">
+
+        <link rel="stylesheet" type="text/css" href="main.css">
+        <!-- Google Fonts: Roboto, Roboto+Condensed --> 
+        <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed" rel="stylesheet">
+        <!-- Google jQuery CDN -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!-- Add icon library -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"  rel="stylesheet">
+        
+        <!-- jQuery Script -->
+        <script>
+            $(document).ready(function() {
+                //start states 
+                $(".social").hide(); 
+                $("#face").hide();
+                $("#bio").hide(); 
+                $("#info").hide();
+                $("#pitch").hide(); 
+                $(".greet").hide().delay(200);  
+                $(".greet").fadeIn(1000).delay(200);
+               
+                //hide & remove intro, show face and info
+                $("#intro").click(function() {
+                    $(document.body).css("background-color","white");
+                    $(this).remove(); 
+                    $("#face").fadeIn(400);
+                    $("#info").show();
+                    
+                }); 
+                
+                //animations for social media
+                $("#face").mouseenter(function() {
+                    //show face  
+                    $("#me").animate({ opacity:"1.0" }, { queue:false, duration:900 });
+                    
+                    //show socials on mouse enters #face
+                    $(this).animate({ height:"340px" }, { queue:false, duration:350 });
+                    $(".social").fadeIn(400);
+                
+                    //fade in about me
+                    $("#bio").fadeIn(400); 
+                    
+                    //animate + show the projects/info div
+                    $("#info").animate({ opacity:"1.0"}, { queue:false, duration: 1100 }); 
+                    
+                    //fade in next segment FIX TIMING
+                    $("#pitch").fadeIn(500); 
+                });
+                $("#face").mouseleave(function() {
+                    //hide socials on mouse leaves #face
+                    $(".social").fadeOut("fast"); 
+                    $(this).animate( { height:"275px" }, { queue:false, duration:350 });
+                });
+        
+                //animations for projects/info
+                $(".col").mouseenter(function() {
+                    //show desc
+                    $("#info").animate( { height:"320px" }, { queue:false, duration:400 });
+                    $(this).animate( { height:"275px" }, { queue:false, duration:400 });
+                });
+                $(".col").mouseleave(function() {
+                    //hide desc
+                    $("#info").animate( { height:"140px" }, { queue:false, duration:400 });
+                    $(this).animate( { height:"100px" }, { queue:false, duration:400 });
+                });
+                
+                //animations for pitch
+                $("#pitch").mouseenter(function() {
+                    $(this).animate( { height:"400px" }, { queue:false, duration:400 });
+                });
+                $("#pitch").mouseleave(function() {
+                    $(this).animate( { height:"100px" }, { queue:false, duration:400 });
+                });
+
+            });    
+        </script>
+    </head>
+    
+    <body>
+        <!-- introduction BW page -->
+        <div id="intro">
+            <div class="greet">
+                <p>Hello,</p>
+                <p>I'm Jack</p>
+            </div>
+        </div>
+        <!-- my headshot and social media -->
+        <div id="face">
+            <div id="connect">
+                <img src="images/me_spiffy.JPG" alt="me" id="me">
+                <!-- Clickable Socials -->
+                <div class="social">
+                    <!-- Send me an email! --> 
+                    <a href="mailto:jwitt1452@email.com?subject=Job Opportunity" target="_blank" class="fa fa-google" id="left"></a>
+                    <!-- Facebook --> 
+                    <a href="https://www.facebook.com/profile.php?id=100010095940976" target="_blank" class="fa fa-facebook" id="mid_left"></a>
+                    <!-- Linked In -->
+                    <a href="https://www.linkedin.com/in/joseph-witt-52a960171/" target="_blank" class="fa fa-linkedin" id="mid_right"></a>
+                    <!-- Github -->
+                    <a href="https://github.com/jQwitt" target="_blank" class="fa fa-github" id="right"></a> 
+                </div>
+            </div>
+            <div id="bio">
+                <p1>ABOUT ME</p1>
+                <div class="line"></div>
+                <p>I am currently a Sophomore at Seattle University studying Computer Science. I am currently a Sophomore at Seattle University studying Computer Science. I am currently a Sophomore at Seattle University studying Computer Science. 
+                </p>
+            </div>
+        </div>
+        <!-- things im doing -->
+        <div id="info">
+            <div id="col_1" class="col">
+                <p>PUT</p>
+            </div>
+            <div id="col_2" class="col">
+                <p>WORDS</p>
+            </div>
+            <div id="col_3" class="col">
+                <p>HERE</p>
+            </div>
+        </div>
+        <!-- why hire me? -->
+        <div id="pitch">
+        </div>
+    </body>
+</html>
