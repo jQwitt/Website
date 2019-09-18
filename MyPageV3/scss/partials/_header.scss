@@ -1,0 +1,32 @@
+.sticky-header { 
+    background-color: $white;
+    overflow: hidden; 
+    position: fixed; 
+    top: 0;  
+    text-align: center;
+    box-shadow: 0rem 0.5rem 1rem -1rem black;
+    z-index: 10000; 
+    
+    .social-media { 
+        width: 100vw;
+        display: flex;
+        flex-direction: row; 
+    
+        .icon { 
+            padding: 1rem;
+            font-size: 7vh; 
+            width: 33.333%;
+            transition: background-color 0.2s, color 0.1s; 
+        
+            &:hover, &:active {
+                background-color: $purple-light; 
+                color: $white;  
+            }
+        }
+    }
+    
+    .name {  
+        text-transform: uppercase; 
+        
+    }
+} 
