@@ -1,0 +1,149 @@
+body {
+  overflow: hidden;
+  margin: 0; }
+
+/** DEBUG **/
+/** For Desktop **/
+@media only screen and (min-width: 769px) {
+  div {
+    border-color: red; }
+  .content-main {
+    display: flex;
+    flex-direction: row; }
+  .bio {
+    margin: auto;
+    width: 35vw;
+    height: 80vh;
+    min-width: 20rem; }
+  .dashboard {
+    width: 65vw;
+    height: 100vh;
+    box-shadow: 1rem 0rem 2rem -1rem lightgrey inset; } }
+
+/** For Tablets **/
+@media only screen and (max-width: 768px) {
+  div {
+    border-color: blue; }
+  .content-main {
+    display: flex;
+    flex-direction: column; }
+  .bio, .dashboard {
+    width: 100vw; }
+  .bio {
+    height: 30vh;
+    display: flex;
+    flex-direction: row; }
+    .bio .wrapper {
+      display: flex;
+      flex-direction: row; }
+  .dashboard {
+    height: 70vh;
+    box-shadow: 0rem 1rem 2rem -1.5rem lightgrey inset; }
+    .dashboard .scroll-view {
+      margin-top: 5vh; } }
+
+/** For Mobile **/
+@media only screen and (max-width: 480px) {
+  div {
+    border-color: green; }
+  .content-main {
+    display: flex;
+    flex-direction: column; }
+  .bio, .dashboard {
+    width: 100vw; }
+  .bio {
+    height: 20vh; }
+  .dashboard {
+    height: 80vh; } }
+
+.headshot {
+  display: flex;
+  flex-direction: row;
+  max-height: 25rem;
+  min-width: inherit;
+  padding: 2rem 0 2rem 0; }
+  .headshot img {
+    margin: auto;
+    padding: 0.5rem;
+    max-width: 70%;
+    max-height: 70%;
+    border-radius: 50%;
+    background-color: #EFEFEF;
+    transition: background-color 0.75s; }
+    .headshot img:hover {
+      background-color: lightgray; }
+
+.desc {
+  display: none; }
+
+/** For Tablets **/
+@media only screen and (max-width: 768px) {
+  .headshot {
+    max-height: 30vh;
+    padding: 0; }
+    .headshot img {
+      margin-top: auto;
+      margin-bottom: auto;
+      margin-left: 2rem;
+      max-width: 12rem;
+      max-height: 12rem; } }
+
+/** For Mobile **/
+.links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: auto;
+  padding-top: 1rem;
+  max-width: 70%;
+  border-top: 0.0625rem solid black; }
+
+.link {
+  margin: 0 0.5rem 0 0.5rem; }
+  .link a {
+    color: #EFEFEF;
+    border-radius: inherit;
+    font-size: 2.5rem;
+    text-decoration: none;
+    transition: color 0.75s; }
+    .link a:hover {
+      color: gray; }
+
+/** For Tablets **/
+@media only screen and (max-width: 768px) {
+  .links {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
+    border-top: none;
+    border-left: 0.0625rem solid black; }
+    .links .link {
+      margin: auto; } }
+
+/** For Mobile **/
+@media only screen and (max-width: 480px) {
+  .links {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0; }
+    .links .link {
+      margin: 0; } }
+
+.scroll-view {
+  overflow: scroll;
+  margin-top: 10vh;
+  margin-left: 5%;
+  max-height: 90%;
+  width: 90%;
+  background-color: lightgray; }
+  .scroll-view .widget {
+    height: 50rem; }
+  .scroll-view .footer {
+    background-color: #FFF;
+    height: 5rem;
+    min-width: 100%; }
+
+/*# sourceMappingURL=styles.css.map */

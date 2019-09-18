@@ -1,0 +1,83 @@
+body { 
+    overflow: hidden; 
+    margin: 0;
+} 
+     
+/** DEBUG **/ 
+div {   
+    //border: 0.0625rem solid red;
+}    
+
+/** For Desktop **/ 
+@media only screen and (min-width: 769px) { 
+   div {   
+        border-color: red;
+    }  
+    .content-main { 
+        display: flex; 
+        flex-direction: row; 
+    }
+    .bio { 
+        margin: auto;
+        width: 35vw;
+        height: 80vh; 
+        min-width: 20rem; 
+    }
+    .dashboard { 
+        width: 65vw; 
+        height: 100vh;
+        box-shadow: 1rem 0rem 2rem -1rem lightgrey inset;
+    }
+}
+
+/** For Tablets **/ 
+@media only screen and (max-width: 768px) {
+    div {  
+        border-color: blue;
+    } 
+    .content-main { 
+        display: flex;
+        flex-direction: column;  
+    }
+    .bio, .dashboard { 
+        width: 100vw; 
+    }
+    .bio { 
+        height: 30vh;
+        display: flex;
+        flex-direction: row;
+        
+        .wrapper { 
+            display: flex;
+            flex-direction: row; 
+        }
+    }
+    .dashboard {  
+        height: 70vh; 
+        box-shadow: 0rem 1rem 2rem -1.5rem lightgrey inset;
+        
+        .scroll-view { 
+            margin-top: 5vh;
+        }
+    }
+}
+
+/** For Mobile **/ 
+@media only screen and (max-width: 480px) {
+    div {  
+        border-color: green;
+    }  
+    .content-main {
+        display: flex;
+        flex-direction: column; 
+    }
+    .bio, .dashboard { 
+        width: 100vw; 
+    }
+    .bio { 
+        height: 20vh; 
+    }
+    .dashboard { 
+        height: 80vh; 
+    }
+}

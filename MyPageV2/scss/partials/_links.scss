@@ -1,0 +1,57 @@
+.links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: auto;
+    padding-top: 1rem;
+    max-width: 70%;
+    border-top: 0.0625rem solid black;
+}
+
+.link {
+    margin: 0 0.5rem 0 0.5rem;
+
+    a {
+        color: #EFEFEF;
+        border-radius: inherit;
+        font-size: 2.5rem;
+        text-decoration: none;
+        transition: color 0.75s;
+
+        &:hover {
+            color: gray;
+        }
+    }
+}
+
+/** For Tablets **/
+@media only screen and (max-width: 768px) {
+    .links {
+        display: flex;
+        flex-direction: column;
+        margin: 1rem;
+        padding: 0.5rem 0.5rem 0.5rem 1rem;
+        border-top: none;
+        border-left: 0.0625rem solid black;
+
+        .link {
+            margin: auto;
+        }
+    }
+
+}
+
+/** For Mobile **/
+@media only screen and (max-width: 480px) {
+    .links {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 0;
+        padding: 0;
+ 
+        .link {
+            margin: 0;
+        }
+    }
+}

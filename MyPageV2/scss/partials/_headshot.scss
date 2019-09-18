@@ -1,0 +1,46 @@
+.headshot {
+    display: flex;
+    flex-direction: row; 
+    max-height: 25rem;
+    min-width: inherit;
+    padding: 2rem 0 2rem 0;
+
+    img { 
+        margin: auto;
+        padding: 0.5rem;
+        max-width: 70%;
+        max-height: 70%;
+        border-radius: 50%; 
+        background-color: #EFEFEF;
+        transition: background-color 0.75s;
+        
+        &:hover { 
+            background-color: lightgray;
+        }
+    }
+}
+
+.desc { 
+    display: none;  
+} 
+
+/** For Tablets **/ 
+@media only screen and (max-width: 768px) {
+    .headshot {  
+        max-height: 30vh; 
+        padding: 0; 
+        
+        img { 
+            margin-top: auto; 
+            margin-bottom: auto; 
+            margin-left: 2rem;
+            max-width: 12rem;
+            max-height: 12rem; 
+        }
+    }
+}
+
+/** For Mobile **/ 
+@media only screen and (max-width: 480px) {
+    
+}
