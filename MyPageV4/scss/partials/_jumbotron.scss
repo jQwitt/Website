@@ -1,0 +1,19 @@
+.jumbotron { 
+    .display { 
+        display: flex;
+        flex-direction: row; 
+        justify-content: space-between; 
+        padding-top: 2rem; 
+        padding-bottom: 2rem; 
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+        h1 { 
+            margin: -0.25rem 0rem 0rem 0rem; 
+        }
+        i { 
+            &:before { 
+                margin: 2rem 1rem 1rem 1rem; 
+            }
+        }
+    }
+}

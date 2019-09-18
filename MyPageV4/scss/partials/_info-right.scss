@@ -1,0 +1,39 @@
+.info-right { 
+    max-height: 90vh; 
+    overflow-y: scroll;
+    overflow: -moz-scrollbars-none; 
+    -ms-overflow-style: none; 
+    padding: 0;  
+    margin-top: 2rem;
+
+    .jumbotron, .resume, .portfolio, .about { 
+        margin: 2rem 0rem 0rem 2rem; 
+        //min-height: 500px;
+    }
+} 
+
+.info-right::-webkit-scrollbar { 
+    width: 0 !important; 
+}
+
+.scroller { 
+    position: absolute;
+    bottom: 2rem; 
+    right: 4.5rem;
+    border: 0.125rem solid green;
+}
+@media screen and (max-width: $med-large) { 
+    .info-right { 
+        .jumbotron, .resume, .portfolio, .about {
+            margin: 1.5rem 0rem; 
+        }
+        .jumbotron { 
+            .display { 
+                justify-content: center; 
+            }
+        }
+    }
+    .scroller { 
+        display: none;
+    }
+}
