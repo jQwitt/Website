@@ -8,24 +8,39 @@
 
     .jumbotron, .resume, .portfolio, .about { 
         margin: 2rem 0rem 0rem 2rem; 
-        //min-height: 500px;
+    }
+    .resume, .portfolio, .about { 
+        padding-left: 2rem;
     }
 } 
 
 .info-right::-webkit-scrollbar { 
     width: 0 !important; 
 }
-
+ 
 .scroller { 
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px -1px $grey-3; 
     position: absolute;
-    bottom: 2rem; 
+    min-height: 2rem;
+    min-width: 2rem;
+    bottom: 2.5rem; 
     right: 4.5rem;
-    border: 0.125rem solid green;
+    
+    a { 
+        display: block; 
+        text-align: center;
+    }
 }
 @media screen and (max-width: $med-large) { 
-    .info-right { 
+    .info-right {
+        margin-top: 0rem;  
         .jumbotron, .resume, .portfolio, .about {
             margin: 1.5rem 0rem; 
+        }
+        .resume, .portfolio, .about { 
+            padding-left: 3rem;
+            padding-right: 3rem;
         }
         .jumbotron { 
             .display { 

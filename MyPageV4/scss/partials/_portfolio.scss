@@ -1,11 +1,52 @@
 .portfolio { 
     .container { 
-        display: flex; 
-        flex-direction: row; 
-        justify-items: left; 
-
-        .items { 
-            margin: 1rem;
+        display: grid;  
+        grid-template-columns: repeat(6, 1fr); 
+        .item {
+            padding: 1rem; 
+            a {
+                text-decoration: none; 
+                color: $black;
+            }  
+            p { 
+                margin: 0; 
+            }
+        }
+    }
+}
+@media screen and (min-width: $large) { 
+    .portfolio {
+        .container { 
+            .item { 
+                grid-column: span 2; 
+            }
+        }
+    }
+}
+@media screen and (max-width: $large) { 
+    .portfolio {
+        .container { 
+            .item { 
+                grid-column: span 3; 
+            }
+        }
+    }
+}
+@media screen and (max-width: $med-large) { 
+    .portfolio {
+        .container { 
+            .item { 
+                grid-column: span 2; 
+            }
+        }
+    }
+}
+@media screen and (max-width: $medium) { 
+    .portfolio {
+        .container {  
+            .item { 
+                grid-column: span 6; 
+            }
         }
     }
 }

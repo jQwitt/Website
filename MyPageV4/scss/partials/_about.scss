@@ -1,0 +1,101 @@
+.about { 
+    padding: 1rem; 
+    .contact { 
+        #contact-links { 
+            a { 
+                padding: 1rem 1rem;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between; 
+                align-items: center; 
+                color: $black;
+                text-decoration: none;   
+            }
+            a:nth-child(1):active { 
+                background-color: $blue-1;
+            }
+            a:nth-child(2):active { 
+                background-color: $orange-1;
+            }
+            a:nth-child(3):active { 
+                background-color: $red-1;
+            }
+        }
+    }
+    .footer { 
+        margin-top: 7rem; 
+        text-align: center;
+    }
+}
+@media screen and (max-width: $med-large) { 
+    .about { 
+        .contact { 
+            h1 { 
+                margin-bottom: 0rem; 
+            }
+            #contact-links {
+                a { 
+                    margin-top: 0.5rem;
+                    margin-bottom: 0.5rem;
+                } 
+                a:nth-child(1) { 
+                    box-shadow: 0px 2px $blue-0;
+                    h2,i { 
+                        color: $blue-0; 
+                    }   
+                }
+                a:nth-child(2) { 
+                    box-shadow: 0px 2px $orange-0;
+                    h2,i { 
+                        color: $orange-0; 
+                    }   
+                }
+                a:nth-child(3) { 
+                    box-shadow: 0px 2px $red-0;
+                    h2,i { 
+                        color: $red-0; 
+                    }   
+                }
+            }
+        }
+        .footer { 
+            margin-top: 0rem; 
+            margin-bottom: 5.25rem; 
+        }
+    }
+}
+@media screen and (min-width: $med-large) { 
+    .about { 
+        .contact { 
+            #contact-links {
+                a { 
+                    transition: margin 0.25s ease-out, box-shadow 0.25s;
+                    h2,i {
+                        transition: color 0.25s;    
+                    }
+                    &:hover { 
+                        margin: 0rem 1rem; 
+                    }
+                } 
+                a:nth-child(1):hover {
+                    box-shadow: 0px 2px $blue-0; 
+                    h2,i { 
+                        color: $blue-0; 
+                    }            
+                }
+                a:nth-child(2):hover {
+                    box-shadow: 0px 2px $orange-0;  
+                    h2,i { 
+                        color: $orange-0; 
+                    }            
+                }
+                a:nth-child(3):hover {
+                    box-shadow: 0px 2px $red-0;  
+                    h2,i { 
+                        color: $red-0; 
+                    }            
+                }
+            }
+        }
+    }
+}

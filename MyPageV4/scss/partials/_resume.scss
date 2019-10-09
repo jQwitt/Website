@@ -1,0 +1,57 @@
+.resume { 
+    & > * { 
+       margin-left: 1rem; 
+    }
+    h1 { 
+        margin-left: 0; 
+        margin-top: 0.5rem;
+    }
+    h3 { 
+        font-size: 1.5rem; 
+        margin-bottom: 0;
+    }
+    .container { 
+        border-top: 0.125rem solid $black;
+        margin-top: 0.5rem;
+        padding-right: 1rem; 
+        .item { 
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem; 
+            transition: transform 0.5s, background-color 0.5s;
+            & > * { 
+                margin: 0.025rem;
+            }
+            h4 { 
+                font-size: 1.2rem;
+                font-weight: 700;
+                letter-spacing: 0.0625rem;
+                text-decoration: underline; 
+                transition: padding-bottom 0.5s;   
+            }
+            h5 { 
+                font-size: 1rem; 
+                font-weight: 900;
+                transition: padding-bottom 0.65s;
+            }
+            h6 { 
+                font-size: 0.85rem; 
+                transition: padding-bottom 0.75s;
+            }
+            p { 
+                margin-top: 0.75rem;
+                font-size: 0.85rem; 
+            }
+        }
+    }
+}
+@media screen and (min-width: $med-large) { 
+    .container { 
+        .item:hover {
+            transform: scale(1.1);
+            background-color: $red-1;  //change  
+            h4,h5,h6 { 
+                padding-bottom: 0.5rem;      
+            }
+        }
+    }     
+}

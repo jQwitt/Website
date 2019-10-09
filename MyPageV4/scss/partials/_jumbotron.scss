@@ -9,10 +9,96 @@
         margin-bottom: 3rem;
         h1 { 
             margin: -0.25rem 0rem 0rem 0rem; 
-        }
+        } 
         i { 
             &:before { 
                 margin: 2rem 1rem 1rem 1rem; 
+            }
+        }
+    }
+    .dev, .uni, .mov {
+        h1 { 
+            position: relative;
+            &:after{     
+                position: absolute;
+                text-align: left; 
+                font-size: 1rem; 
+                top: 3.5rem;
+                left: 0; 
+            }
+        }
+    }
+    .dev { 
+        h1:after { 
+            content: 'C++ | JavaScript | HTML&CSS | Bash';
+            color: $blue-2;
+        }
+    }
+    .uni { 
+        h1:after { 
+            content: 'C.S. Major | Graduating 2021';
+            color: $orange-2;
+        }
+    }
+    .mov { 
+        h1:after { 
+            content: 'Anything Anderson, Kaufman or Nolan!';
+            color: $red-2;
+        }
+    }
+    @media screen and (max-width: $med-large) { 
+        .dev, .uni, .mov {
+            h1:after { 
+                bottom: 2;
+                opacity: 0;
+                transition: bottom 0.25s, opacity 0.25s;
+            }
+            &:active { 
+                h1:after { 
+                    bottom: 0;
+                    opacity: 1;         
+                        
+                }  
+            }    
+            
+        }
+    }
+    @media screen and (min-width: $med-large) { 
+        .dev, .uni, .mov {
+            h1:after{ 
+                opacity: 0; 
+                transition: top 0.25s, opacity 0.15s; 
+                top: 1rem; 
+            }
+            h1 { 
+                transition: color 0.25s; 
+            }
+            i { 
+                transition: color 0.25s, transform 0.25s; 
+            } 
+        }
+        .dev:hover, .uni:hover, .mov:hover { 
+            i { 
+               transform: scale(1.5) rotate(10deg); 
+            }
+            h1:after { 
+                opacity: 1;
+                top: 3.5rem;  
+            }
+        }
+        .dev:hover { 
+            h1,i { 
+                color: $blue-0;          
+            }
+        }
+        .uni:hover { 
+            h1,i { 
+                color: $orange-0;          
+            }
+        } 
+        .mov:hover { 
+            h1,i { 
+                color: $red-0;          
             }
         }
     }

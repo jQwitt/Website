@@ -17,20 +17,26 @@ body {
   min-height: 98vh;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h6 {
   font-family: 'Open Sans', sans-serif;
 }
 
 h1 {
   font-size: 2.5rem;
+  letter-spacing: 0.125rem;
 }
 
-p, li {
+h3, h4 {
+  font-weight: 700;
+}
+
+p, li, h5 {
   font-family: 'Roboto', sans-serif;
 }
 
 p {
   font-size: 1rem;
+  font-weight: 500;
   letter-spacing: 0.025rem;
 }
 
@@ -69,6 +75,12 @@ i {
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    text-align: center;
+  }
 }
 
 .wrapper {
@@ -133,7 +145,10 @@ i {
   display: block;
   margin-right: auto;
   border-radius: 50%;
-  border: 0.4rem solid #E5E5E5;
+  border: 0.4rem solid #FFFFFF;
+  background-image: none;
+  -webkit-box-shadow: 0px 0px 14px 3px #E5E5E5;
+          box-shadow: 0px 0px 14px 3px #E5E5E5;
 }
 
 .info-left #links {
@@ -161,12 +176,24 @@ i {
 .info-left #links a i {
   color: #000000;
   display: inline;
-  margin-right: 0.5rem;
+}
+
+.info-left #links a:nth-child(1):active {
+  background-color: #B3D5EF;
+}
+
+.info-left #links a:nth-child(2):active {
+  background-color: #FFD7BB;
+}
+
+.info-left #links a:nth-child(3):active {
+  background-color: #FCB8C7;
 }
 
 .info-left ul {
   list-style-type: none;
   padding-left: 0.5rem;
+  padding-top: 0.25rem;
 }
 
 .info-left ul li:before {
@@ -194,8 +221,17 @@ i {
     right: 2rem;
     top: 3rem;
   }
-  #links p {
-    display: none;
+  #links a {
+    margin-right: 0.5rem;
+  }
+  #links a:nth-child(1) i {
+    color: #0B86E5;
+  }
+  #links a:nth-child(2) i {
+    color: #FF6A00;
+  }
+  #links a:nth-child(3) i {
+    color: #F90036;
   }
 }
 
@@ -206,6 +242,14 @@ i {
   #headshot img {
     max-width: 15rem;
     margin-left: auto;
+    -webkit-transition: -webkit-transform 0.25s;
+    transition: -webkit-transform 0.25s;
+    transition: transform 0.25s;
+    transition: transform 0.25s, -webkit-transform 0.25s;
+  }
+  #headshot:hover img {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
   }
   #bio {
     position: relative;
@@ -222,11 +266,52 @@ i {
   }
   #bio i {
     position: absolute;
+    margin: 0;
+    padding: 0.5rem;
     right: 4rem;
-    top: 1rem;
+    top: 1.25rem;
   }
   #links {
     padding-top: 0.5rem;
+  }
+  #links a {
+    margin: 0rem 0.5rem;
+    -webkit-transition: padding-bottom 0.25s ease-out, -webkit-box-shadow 0.25s;
+    transition: padding-bottom 0.25s ease-out, -webkit-box-shadow 0.25s;
+    transition: box-shadow 0.25s, padding-bottom 0.25s ease-out;
+    transition: box-shadow 0.25s, padding-bottom 0.25s ease-out, -webkit-box-shadow 0.25s;
+  }
+  #links a i {
+    -webkit-transition: color;
+    transition: color;
+  }
+  #links a:nth-child(1) i {
+    margin-right: 0.125rem;
+    margin-left: 0.125rem;
+  }
+  #links a:nth-child(1):hover {
+    -webkit-box-shadow: 0px -2px #0B86E5;
+            box-shadow: 0px -2px #0B86E5;
+    padding-bottom: 0.25rem;
+  }
+  #links a:nth-child(1):hover i {
+    color: #0B86E5;
+  }
+  #links a:nth-child(2):hover {
+    -webkit-box-shadow: 0px -2px #FF6A00;
+            box-shadow: 0px -2px #FF6A00;
+    padding-bottom: 0.25rem;
+  }
+  #links a:nth-child(2):hover i {
+    color: #FF6A00;
+  }
+  #links a:nth-child(3):hover {
+    -webkit-box-shadow: 0px -2px #F90036;
+            box-shadow: 0px -2px #F90036;
+    padding-bottom: 0.25rem;
+  }
+  #links a:nth-child(3):hover i {
+    color: #F90036;
   }
 }
 
@@ -243,20 +328,40 @@ i {
   margin: 2rem 0rem 0rem 2rem;
 }
 
+.info-right .resume, .info-right .portfolio, .info-right .about {
+  padding-left: 2rem;
+}
+
 .info-right::-webkit-scrollbar {
   width: 0 !important;
 }
 
 .scroller {
+  border-radius: 50%;
+  -webkit-box-shadow: 0px 0px 10px -1px #E5E5E5;
+          box-shadow: 0px 0px 10px -1px #E5E5E5;
   position: absolute;
-  bottom: 2rem;
+  min-height: 2rem;
+  min-width: 2rem;
+  bottom: 2.5rem;
   right: 4.5rem;
-  border: 0.125rem solid green;
+}
+
+.scroller a {
+  display: block;
+  text-align: center;
 }
 
 @media screen and (max-width: 992px) {
+  .info-right {
+    margin-top: 0rem;
+  }
   .info-right .jumbotron, .info-right .resume, .info-right .portfolio, .info-right .about {
     margin: 1.5rem 0rem;
+  }
+  .info-right .resume, .info-right .portfolio, .info-right .about {
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
   .info-right .jumbotron .display {
     -webkit-box-pack: center;
@@ -293,7 +398,203 @@ i {
   margin: 2rem 1rem 1rem 1rem;
 }
 
+.jumbotron .dev h1, .jumbotron .uni h1, .jumbotron .mov h1 {
+  position: relative;
+}
+
+.jumbotron .dev h1:after, .jumbotron .uni h1:after, .jumbotron .mov h1:after {
+  position: absolute;
+  text-align: left;
+  font-size: 1rem;
+  top: 3.5rem;
+  left: 0;
+}
+
+.jumbotron .dev h1:after {
+  content: 'C++ | JavaScript | HTML&CSS | Bash';
+  color: #49A0E3;
+}
+
+.jumbotron .uni h1:after {
+  content: 'C.S. Major | Graduating 2021';
+  color: #FF9246;
+}
+
+.jumbotron .mov h1:after {
+  content: 'Anything Anderson, Kaufman or Nolan!';
+  color: #F9446B;
+}
+
+@media screen and (max-width: 992px) {
+  .jumbotron .dev h1:after, .jumbotron .uni h1:after, .jumbotron .mov h1:after {
+    bottom: 2;
+    opacity: 0;
+    -webkit-transition: bottom 0.25s, opacity 0.25s;
+    transition: bottom 0.25s, opacity 0.25s;
+  }
+  .jumbotron .dev:active h1:after, .jumbotron .uni:active h1:after, .jumbotron .mov:active h1:after {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .jumbotron .dev h1:after, .jumbotron .uni h1:after, .jumbotron .mov h1:after {
+    opacity: 0;
+    -webkit-transition: top 0.25s, opacity 0.15s;
+    transition: top 0.25s, opacity 0.15s;
+    top: 1rem;
+  }
+  .jumbotron .dev h1, .jumbotron .uni h1, .jumbotron .mov h1 {
+    -webkit-transition: color 0.25s;
+    transition: color 0.25s;
+  }
+  .jumbotron .dev i, .jumbotron .uni i, .jumbotron .mov i {
+    -webkit-transition: color 0.25s, -webkit-transform 0.25s;
+    transition: color 0.25s, -webkit-transform 0.25s;
+    transition: color 0.25s, transform 0.25s;
+    transition: color 0.25s, transform 0.25s, -webkit-transform 0.25s;
+  }
+  .jumbotron .dev:hover i, .jumbotron .uni:hover i, .jumbotron .mov:hover i {
+    -webkit-transform: scale(1.5) rotate(10deg);
+            transform: scale(1.5) rotate(10deg);
+  }
+  .jumbotron .dev:hover h1:after, .jumbotron .uni:hover h1:after, .jumbotron .mov:hover h1:after {
+    opacity: 1;
+    top: 3.5rem;
+  }
+  .jumbotron .dev:hover h1, .jumbotron .dev:hover i {
+    color: #0B86E5;
+  }
+  .jumbotron .uni:hover h1, .jumbotron .uni:hover i {
+    color: #FF6A00;
+  }
+  .jumbotron .mov:hover h1, .jumbotron .mov:hover i {
+    color: #F90036;
+  }
+}
+
+.resume > * {
+  margin-left: 1rem;
+}
+
+.resume h1 {
+  margin-left: 0;
+  margin-top: 0.5rem;
+}
+
+.resume h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0;
+}
+
+.resume .container {
+  border-top: 0.125rem solid #000000;
+  margin-top: 0.5rem;
+  padding-right: 1rem;
+}
+
+.resume .container .item {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  -webkit-transition: background-color 0.5s, -webkit-transform 0.5s;
+  transition: background-color 0.5s, -webkit-transform 0.5s;
+  transition: transform 0.5s, background-color 0.5s;
+  transition: transform 0.5s, background-color 0.5s, -webkit-transform 0.5s;
+}
+
+.resume .container .item > * {
+  margin: 0.025rem;
+}
+
+.resume .container .item h4 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.0625rem;
+  text-decoration: underline;
+  -webkit-transition: padding-bottom 0.5s;
+  transition: padding-bottom 0.5s;
+}
+
+.resume .container .item h5 {
+  font-size: 1rem;
+  font-weight: 900;
+  -webkit-transition: padding-bottom 0.65s;
+  transition: padding-bottom 0.65s;
+}
+
+.resume .container .item h6 {
+  font-size: 0.85rem;
+  -webkit-transition: padding-bottom 0.75s;
+  transition: padding-bottom 0.75s;
+}
+
+.resume .container .item p {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+}
+
+@media screen and (min-width: 992px) {
+  .container .item:hover {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+    background-color: #FCB8C7;
+  }
+  .container .item:hover h4, .container .item:hover h5, .container .item:hover h6 {
+    padding-bottom: 0.5rem;
+  }
+}
+
 .portfolio .container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[6];
+      grid-template-columns: repeat(6, 1fr);
+}
+
+.portfolio .container .item {
+  padding: 1rem;
+}
+
+.portfolio .container .item a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.portfolio .container .item p {
+  margin: 0;
+}
+
+@media screen and (min-width: 1200px) {
+  .portfolio .container .item {
+    grid-column: span 2;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .portfolio .container .item {
+    grid-column: span 3;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .portfolio .container .item {
+    grid-column: span 2;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .portfolio .container .item {
+    grid-column: span 6;
+  }
+}
+
+.about {
+  padding: 1rem;
+}
+
+.about .contact #contact-links a {
+  padding: 1rem 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -301,10 +602,102 @@ i {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  justify-items: left;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #000000;
+  text-decoration: none;
 }
 
-.portfolio .container .items {
-  margin: 1rem;
+.about .contact #contact-links a:nth-child(1):active {
+  background-color: #B3D5EF;
+}
+
+.about .contact #contact-links a:nth-child(2):active {
+  background-color: #FFD7BB;
+}
+
+.about .contact #contact-links a:nth-child(3):active {
+  background-color: #FCB8C7;
+}
+
+.about .footer {
+  margin-top: 7rem;
+  text-align: center;
+}
+
+@media screen and (max-width: 992px) {
+  .about .contact h1 {
+    margin-bottom: 0rem;
+  }
+  .about .contact #contact-links a {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .about .contact #contact-links a:nth-child(1) {
+    -webkit-box-shadow: 0px 2px #0B86E5;
+            box-shadow: 0px 2px #0B86E5;
+  }
+  .about .contact #contact-links a:nth-child(1) h2, .about .contact #contact-links a:nth-child(1) i {
+    color: #0B86E5;
+  }
+  .about .contact #contact-links a:nth-child(2) {
+    -webkit-box-shadow: 0px 2px #FF6A00;
+            box-shadow: 0px 2px #FF6A00;
+  }
+  .about .contact #contact-links a:nth-child(2) h2, .about .contact #contact-links a:nth-child(2) i {
+    color: #FF6A00;
+  }
+  .about .contact #contact-links a:nth-child(3) {
+    -webkit-box-shadow: 0px 2px #F90036;
+            box-shadow: 0px 2px #F90036;
+  }
+  .about .contact #contact-links a:nth-child(3) h2, .about .contact #contact-links a:nth-child(3) i {
+    color: #F90036;
+  }
+  .about .footer {
+    margin-top: 0rem;
+    margin-bottom: 5.25rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .about .contact #contact-links a {
+    -webkit-transition: margin 0.25s ease-out, -webkit-box-shadow 0.25s;
+    transition: margin 0.25s ease-out, -webkit-box-shadow 0.25s;
+    transition: margin 0.25s ease-out, box-shadow 0.25s;
+    transition: margin 0.25s ease-out, box-shadow 0.25s, -webkit-box-shadow 0.25s;
+  }
+  .about .contact #contact-links a h2, .about .contact #contact-links a i {
+    -webkit-transition: color 0.25s;
+    transition: color 0.25s;
+  }
+  .about .contact #contact-links a:hover {
+    margin: 0rem 1rem;
+  }
+  .about .contact #contact-links a:nth-child(1):hover {
+    -webkit-box-shadow: 0px 2px #0B86E5;
+            box-shadow: 0px 2px #0B86E5;
+  }
+  .about .contact #contact-links a:nth-child(1):hover h2, .about .contact #contact-links a:nth-child(1):hover i {
+    color: #0B86E5;
+  }
+  .about .contact #contact-links a:nth-child(2):hover {
+    -webkit-box-shadow: 0px 2px #FF6A00;
+            box-shadow: 0px 2px #FF6A00;
+  }
+  .about .contact #contact-links a:nth-child(2):hover h2, .about .contact #contact-links a:nth-child(2):hover i {
+    color: #FF6A00;
+  }
+  .about .contact #contact-links a:nth-child(3):hover {
+    -webkit-box-shadow: 0px 2px #F90036;
+            box-shadow: 0px 2px #F90036;
+  }
+  .about .contact #contact-links a:nth-child(3):hover h2, .about .contact #contact-links a:nth-child(3):hover i {
+    color: #F90036;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
